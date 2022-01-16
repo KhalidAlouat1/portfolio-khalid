@@ -40,8 +40,8 @@
     </div>
   </nav>
   <!-- Buttons voor dark/light mode met de code "onclick" om de function swapStyle aan te roepen-->
-  <button class="DM-btn2" onclick="swapStyle('../CSS/light.css')"><i class="fas fa-sun"></i></button>
-  <button class="DM-btn" onclick="swapStyle('../CSS/dark.css')"><i class="far fa-moon"></i></button>
+  <button class="DM-btn2" onclick="swapStyle('/Public/CSS/light.css')"><i class="fas fa-sun"></i></button>
+  <button class="DM-btn" onclick="swapStyle('/Public/CSS/dark.css')"><i class="far fa-moon"></i></button>
   <!-- Code voor card(Bootstrap) -->
   <div class="container">
     <div class="card border-0 shadow my-5">
@@ -111,7 +111,7 @@
                   <textarea class="Text1" name="message"></textarea>
                   <span>Jouw bericht</span>
                 </div>
-                <button class="btn1" type="submit" name="submit">Verstuur bericht</button>
+                <button class="btn1" type="submit" name="submit">Versturen</button>
               </form>
             </div>
           </div>
@@ -120,13 +120,13 @@
       </div>
     </div>
     <!-- Links/scripts -->
-    <script src="../JS/Main.js"></script>
+    <script src="/Public/JS/Main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link id="mystylesheet" rel="stylesheet" href="../CSS/light.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link id="mystylesheet" rel="stylesheet" href="/Public/CSS/light.css">
+    <link rel="stylesheet" href="/Public/CSS/style.css">
 
 </body>
 

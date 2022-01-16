@@ -13,7 +13,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
     <div class="container">
-      <a class="navbar-brand" href="/HTML/home.html">Khalid Alouat</a>
+      <a class="navbar-brand" href="/Templates/HTML/home.html">Khalid Alouat</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,29 +21,29 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../HTML/home.html">Home
+            <a class="nav-link" href="/Templates/HTML/home.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../HTML/overmij.html">Over mij</a>
+            <a class="nav-link" href="/Templates/HTML/overmij.html">Over mij</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../HTML/hobbies.html">Hobbies</a>
+            <a class="nav-link" href="/Templates/HTML/hobbies.html">Hobbies</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../HTML/projecten.html">Projecten</a>
+            <a class="nav-link active" href="/Templates/HTML/projecten.html">Projecten</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../PHP/contact.php">Contact</a>
+            <a class="nav-link" href="/Templates/PHP/contact.php">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <!-- Buttons voor dark/light mode met onclick om de function swapStyle aan te roepen-->
-  <button class="DM-btn2" onclick="swapStyle('../CSS/light.css')"><i class="fas fa-sun"></i></button>
-  <button class="DM-btn" onclick="swapStyle('../CSS/dark.css')"><i class="far fa-moon"></i></button>
+  <button class="DM-btn2" onclick="swapStyle('/Public/CSS/light.css')"><i class="fas fa-sun"></i></button>
+  <button class="DM-btn" onclick="swapStyle('/Public/CSS/dark.css')"><i class="far fa-moon"></i></button>
   <!-- Code voor card(Bootstrap) -->
   <div class="container">
     <div class="card border-0 shadow my-5">
@@ -55,16 +55,16 @@
           kan je alle projecten zien met een beschrijving van wat het project inhield.
           <br> Je kan op de projectnaam klikken en dan zie je het project.
         </p>
-        <a href="/PHP/zuzu">Project PHP: Sushi restaurant ZuZu</a>
+        <a href="/Templates/PHP/zuzu.php">Project PHP: Sushi restaurant ZuZu</a>
         <br>
         <p>Dit project ging vooral om de functionaliteit. Ik moest een webpagina maken waar je sushi kon bestellen met
           behulp van een database.</p>
-        <a href="/HTML/rekenmachine.html">Project JS: Rekenmachine</a>
+        <a href="/Templates/HTML/rekenmachine.html">Project JS: Rekenmachine</a>
         <br>
         <p>Bij dit project moest ik een werkende rekenmachine maken met behulp van javascript HTML en CSS en dan
           presenteren. Wat best goed ging. Waar ik vooral trost om was is dat ik een echt werkende rekenmachine heb
           kunnen maken.</p>
-        <a href="/HTML/BKE.html">Project JS: Boter, kaas en eieren</a>
+        <a href="/Templates/HTML/BKE.html">Project JS: Boter, kaas en eieren</a>
         <br>
         <p>Bij dit project moest ik het spel boter, kaas en eieren maken met behulp van javascript HTML en CSS. Als je
           naar beneden scrolt kan je het spel ook zien.</p>
@@ -85,7 +85,7 @@
           we ook een eindverslag maken. </p>
         <hr>
         <p class="Csplaatje"><strong>Deel code project C#: hoger lager</strong></p>
-        <img class="Higherlower" src="../Images/HighLow.png" alt="higher lower">
+        <img class="Higherlower" src="/Public/Images/HighLow.png" alt="higher lower">
         <hr>
         <h5><strong>Beroepsprofiel</strong></H5>
         <p> Ik moest ook een beroepsprofiel maken. De opdracht was als volgt: Je zoekt een bedrijf waar je graag zou
@@ -103,7 +103,7 @@
     </div>
   </div>
   <!-- Links/scripts -->
-  <script src="../JS/Main.js"></script>
+  <script src="/Public/JS/Main.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -116,8 +116,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <link id="mystylesheet" rel="stylesheet" href="../CSS/light.css">
-  <link rel="stylesheet" href="../CSS/style.css">
+  <link id="mystylesheet" rel="stylesheet" href="/Public/CSS/light.css">
+  <link rel="stylesheet" href="/Public/CSS/style.css">
 </body>
 
 </html>

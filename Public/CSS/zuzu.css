@@ -1,8 +1,7 @@
-
 body {
     background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-    background-image:url(/Images/sushi8.jpg) ;
+    color: rgb(0, 0, 0);
+    background-image:url(/Public/Images/sushi8.jpg) ;
     background-size: cover;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
@@ -16,4 +15,5 @@ h1 {
 th, td {
     outline: solid 1px black;
 }
+
 
