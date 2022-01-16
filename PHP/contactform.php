@@ -14,4 +14,3 @@ mail($mailTo, $subject, $txt);
 header("Location: contact.php?mailsent");
 
 }
-?>  

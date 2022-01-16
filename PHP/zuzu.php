@@ -1,5 +1,5 @@
 <?php
-    require_once('database.php');
+require_once('database.php');
 ?>
 <link rel="stylesheet" href="/CSS/zuzu.css">
 <div wrapper>
@@ -15,7 +15,7 @@
                 $sql->execute();
                 $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-                foreach($result as $data) {
+                foreach ($result as $data) {
                     echo "
                         <option selected enabled value='$data[name]'>" . $data['name'] . "</option>
                     ";
@@ -40,53 +40,53 @@
 </div>
 
 <?php
-    global $pdo;
-    if(isset($_POST['submit'])){
-        if ($_POST['amount'] != 0 && !empty($_POST['amount']) && !empty($_POST['fname']) && !empty($_POST['lname']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['zipcode'])) {
-            $amount = $_POST['amount'];
-            $sushi = $_POST['sushi_id'];
-            $fname = $_POST['fname'];
-            $lname = $_POST['lname'];
-            $address = $_POST['address'];
-            $city = $_POST['city'];
-            $zipcode = $_POST['zipcode'];
+global $pdo;
+if (isset($_POST['submit'])) {
+    if ($_POST['amount'] != 0 && !empty($_POST['amount']) && !empty($_POST['fname']) && !empty($_POST['lname']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['zipcode'])) {
+        $amount = $_POST['amount'];
+        $sushi = $_POST['sushi_id'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $address = $_POST['address'];
+        $city = $_POST['city'];
+        $zipcode = $_POST['zipcode'];
 
-            $sql = $pdo->prepare("INSERT INTO customer (fname, lname, address, city, zipcode) VALUES ('$fname', '$lname', '$address', '$city', '$zipcode')");
-            $sql->execute();
+        $sql = $pdo->prepare("INSERT INTO customer (fname, lname, address, city, zipcode) VALUES ('$fname', '$lname', '$address', '$city', '$zipcode')");
+        $sql->execute();
 
-            $sql = $pdo->prepare("SELECT * FROM customer");
-            $sql->execute();
-            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        $sql = $pdo->prepare("SELECT * FROM customer");
+        $sql->execute();
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($result as $data) {
-                if ($data['address'] == $address) {
-                    $fn = $data['fname'];
-                    $ln = $data['lname'];
-                    $ad = $data['address'];
-                    $ci = $data['city'];
-                    $zi = $data['zipcode'];
+        foreach ($result as $data) {
+            if ($data['address'] == $address) {
+                $fn = $data['fname'];
+                $ln = $data['lname'];
+                $ad = $data['address'];
+                $ci = $data['city'];
+                $zi = $data['zipcode'];
+            }
+        }
+
+        $sql = $pdo->prepare("SELECT * FROM sushi");
+        $sql->execute();
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($result as $data) {
+            if ($data['name'] == $sushi) {
+                $sn = $data['name'];
+                $sp = $data['price'];
+                $id = $data['id'];
+                $sa = $amount;
+                if ($sa > 1) {
+                    $stp = $data['price'] * $sa;
+                } else {
+                    $stp = $sp;
                 }
             }
+        }
 
-            $sql = $pdo->prepare("SELECT * FROM sushi");
-            $sql->execute();
-            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-
-            foreach ($result as $data) {
-                if ($data['name'] == $sushi) {
-                    $sn = $data['name'];
-                    $sp = $data['price'];
-                    $id = $data['id'];
-                    $sa = $amount;
-                    if ($sa > 1) {
-                        $stp = $data['price'] * $sa;
-                    } else {
-                        $stp = $sp;
-                    }
-                }
-            }
-
-            echo "
+        echo "
             <table>
                 <tr>
                     <th>Voornaam</th>
@@ -115,10 +115,8 @@
                     <td>" . $stp . "</td>
                 </tr>
             </table>";
-        } else {
-            echo '<script>alert("Fill in all fields.");</script>';
-        }
+    } else {
+        echo '<script>alert("Fill in all fields.");</script>';
     }
+}
 ?>
-
-

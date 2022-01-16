@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Portfolio</title>
 </head>
 <!-- Code voor navbar -->
@@ -13,9 +12,8 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
     <div class="container">
-      <a class="navbar-brand" href="#">Khalid Alouat</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="/HTML/home.html">Khalid Alouat</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -71,74 +69,65 @@
               <div class="text">
                 <h3>Social Media</h3>
                 <div class="row">
-                <div class="col-md-6">
+                  <div class="col-md-6">
                     <?php
                     try {
-                        $db = new PDO("mysql:host=localhost;dbname=portfolio","root", "");
-                        $query = $db->prepare ("SELECT * FROM contactgegevens");
-                        $query->execute();
-                        $result = $query->fetchAll(PDO::FETCH_ASSOC);
-                        echo "<table>";
-                        foreach ($result as &$data) {
-                            echo "<td>" . $data ["account"] . " ";
-                            echo "<td>" . $data ["volgers"] . "<br>";
-                            echo "</tr>";
-                        }
-                        echo "</table>";
-                    } catch(PDOException $e) {
-                        die("Error!: " . $e->getMessage());
+                      $db = new PDO("mysql:host=localhost;dbname=portfolio", "root", "");
+                      $query = $db->prepare("SELECT * FROM contactgegevens");
+                      $query->execute();
+                      $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                      echo "<table>";
+                      foreach ($result as &$data) {
+                        echo "<td>" . $data["account"] . " ";
+                        echo "<td>" . $data["volgers"] . "<br>";
+                        echo "</tr>";
+                      }
+                      echo "</table>";
+                    } catch (PDOException $e) {
+                      die("Error!: " . $e->getMessage());
                     }
-                ?>
-                </div>
+                    ?>
+                  </div>
 
+                </div>
               </div>
             </div>
+            <div class="contactForm">
+              <form class="form_1" action="contactform.php" method="post">
+                <h2>Stuur een mail</h2>
+                <div class="form_2" class="inputBox">
+                  <input type="text" name="name">
+                  <span>Naam</span>
+                </div><br>
+                <div class="inputBox">
+                  <input type="text" name="mail">
+                  <span>E-mail</span>
+                </div><br>
+                <div class="inputBox">
+                  <input type="text" name="subject">
+                  <span>Onderwerp</span>
+                </div><br>
+                <div class="inputBox">
+                  <textarea class="Text1" name="message"></textarea>
+                  <span>Jouw bericht</span>
+                </div>
+                <button class="btn1" type="submit" name="submit">Verstuur bericht</button>
+              </form>
+            </div>
           </div>
-          <div class="contactForm">
-            <form class="form_1" action="contactform.php" method="post">
-              <h2>Stuur een mail</h2>
-              <div class="form_2" class="inputBox">
-                <input type="text" name="name">
-                <span>Naam</span>
-              </div><br>
-              <div class="inputBox">
-                <input type="text" name="mail">
-                <span>E-mail</span>
-              </div><br>
-              <div class="inputBox">
-                <input type="text" name="subject">
-                <span>Onderwerp</span>
-              </div><br>
-              <div class="inputBox">
-                <textarea class="Text1" name="message"></textarea>
-                <span>Jouw bericht</span>
-              </div>
-              <button class="btn1" type="submit" name="submit">Verstuur bericht</button>
-            </form>
-          </div>
+          <hr>
         </div>
-        <hr>
       </div>
     </div>
-  </div>
-  <!-- Links/scripts -->
-  <script src="../JS/Main.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <link id="mystylesheet" rel="stylesheet" href="../CSS/light.css">
-  <link rel="stylesheet" href="../CSS/style.css">
+    <!-- Links/scripts -->
+    <script src="../JS/Main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link id="mystylesheet" rel="stylesheet" href="../CSS/light.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 
 </body>
 
 </html>
-
