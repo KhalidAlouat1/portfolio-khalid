@@ -1,0 +1,249 @@
+//console.log("hallo");
+// Code voor theme saving
+window.addEventListener("DOMContentLoaded", (event) => {
+   if (localStorage.getItem("theme")) {
+      document.getElementById('mystylesheet').href = localStorage.getItem("theme")
+   }
+
+})
+// Function voor dark/light mode om te swappen van CSS (Dark & Light)
+function swapStyle(sheet) {
+   document.getElementById('mystylesheet').href = sheet
+   localStorage.setItem('theme', sheet)
+}
+
+// BKE JS
+// Function variables om de X en O te laten zien
+function variables() {
+   t = 1;
+   change = 1;
+   empty1 = -1;
+   empty2 = -1;
+   empty3 = -1;
+   empty4 = -1;
+   empty5 = -1;
+   empty6 = -1;
+   empty7 = -1;
+   empty8 = -1;
+   empty9 = -1;
+   return;
+   whogoesnow = "Player 1's turn"
+}
+// Win combinaties voor X (Player 1)
+function win() {
+   if (empty1 == empty2 && empty2 == empty3 && empty3 == 0 ||
+      empty4 == empty5 && empty5 == empty6 && empty6 == 0 ||
+      empty7 == empty8 && empty8 == empty9 && empty9 == 0 ||
+      empty1 == empty4 && empty4 == empty7 && empty7 == 0 ||
+      empty2 == empty5 && empty5 == empty8 && empty8 == 0 ||
+      empty3 == empty6 && empty6 == empty9 && empty9 == 0 ||
+      empty1 == empty5 && empty5 == empty9 && empty9 == 0 ||
+      empty3 == empty5 && empty5 == empty7 && empty7 == 0) {
+      alert("Player 1 won!");
+      history.go(0)
+   } // Win combinaties voor O (Player 1)
+   if (empty1 == empty2 && empty2 == empty3 && empty3 == 1 ||
+      empty4 == empty5 && empty5 == empty6 && empty6 == 1 ||
+      empty7 == empty8 && empty8 == empty9 && empty9 == 1 ||
+      empty1 == empty4 && empty4 == empty7 && empty7 == 1 ||
+      empty2 == empty5 && empty5 == empty8 && empty8 == 1 ||
+      empty3 == empty6 && empty6 == empty9 && empty9 == 1 ||
+      empty1 == empty5 && empty5 == empty9 && empty9 == 1 ||
+      empty3 == empty5 && empty5 == empty7 && empty7 == 1) {
+      alert("Player 2 won!");
+      history.go(0)
+   }
+}
+// Function turnchange om te wisselen van X en O
+function turnchange(t) {
+   if (change == 1) {
+      if (t == 0) {
+         t = 1;
+         whogoesnow = "Round : Player " + 1
+      }
+      else {
+         t = 0;
+         whogoesnow = "Round : Player " + 2
+      }
+
+   }
+   else {
+      t = t;
+   }
+   change = 1
+   return (t);
+}
+// Function changing zodat de player zijn symbool verschijnt als je één van de buttons klikt
+function changing(clicked) {
+   if (clicked == 1) {
+      spot = empty1;
+   }
+   if (clicked == 2) {
+      spot = empty2;
+   }
+   if (clicked == 3) {
+      spot = empty3;
+   }
+   if (clicked == 4) {
+      spot = empty4;
+   }
+   if (clicked == 5) {
+      spot = empty5;
+   }
+   if (clicked == 6) {
+      spot = empty6;
+   }
+   if (clicked == 7) {
+      spot = empty7;
+   }
+   if (clicked == 8) {
+      spot = empty8;
+   }
+   if (clicked == 9) {
+      spot = empty9;
+   }
+
+   if (spot == -1) {
+      if (t == 0) {
+         xo = "  O  ";
+         spot = 0
+      }
+      else {
+         xo = "  X  ";
+         spot = 1
+      }
+      if (clicked == 1) {
+         empty1 = spot;
+      }
+      if (clicked == 2) {
+         empty2 = spot;
+      }
+      if (clicked == 3) {
+         empty3 = spot;
+      }
+      if (clicked == 4) {
+         empty4 = spot;
+      }
+      if (clicked == 5) {
+         empty5 = spot;
+      }
+      if (clicked == 6) {
+         empty6 = spot;
+      }
+      if (clicked == 7) {
+         empty7 = spot;
+      }
+      if (clicked == 8) {
+         empty8 = spot;
+      }
+      if (clicked == 9) {
+         empty9 = spot;
+      }
+   }
+   else {
+      if (spot == 0) {
+         xo = "  O  ";
+      }
+      if (spot == 1) {
+         xo = "  X  ";
+      }
+      change = 0
+   }
+   return (xo);
+}
+
+// Function change voor elke button: Eigenlijk is dit alles samengevoegd. Met deze function zorg je ervoor dat als je op een btn klikt alle
+// functions netjes achterelkaar word afgespeeld
+//Eerst word de function changing aangeroepen. daarna turnchange, dan XO (Laat zien welke symbool van wie is) en
+function change_b1(form) {
+   clicked = 1;
+   changing(clicked);
+   t = turnchange(t);
+   form.b1.value = xo;
+   form.whoseturn.value = whogoesnow
+   win();
+   return;
+}
+function change_b2(form) {
+   clicked = 2;
+   changing(clicked);
+   form.b2.value = xo;
+   t = turnchange(t);
+   form.whoseturn.value = whogoesnow
+   win();
+   return;
+}
+
+function change_b3(form) {
+   clicked = 3;
+   changing(clicked);
+   form.b3.value = xo;
+   t = turnchange(t);
+   form.whoseturn.value = whogoesnow
+   win();
+   return;
+}
+
+function change_b4(form) {
+   clicked = 4;
+   changing(clicked);
+   form.b4.value = xo;
+   t = turnchange(t);
+   form.whoseturn.value = whogoesnow
+   win();
+   return;
+}
+
+function change_b5(form) {
+   clicked = 5;
+   changing(clicked);
+   form.b5.value = xo;
+   t = turnchange(t);
+   form.whoseturn.value = whogoesnow
+   win();
+   return;
+}
+
+function change_b6(form) {
+   clicked = 6;
+   changing(clicked);
+   form.b6.value = xo;
+   t = turnchange(t);
+   form.whoseturn.value = whogoesnow
+   win();
+   return;
+}
+
+function change_b7(form) {
+   clicked = 7;
+   changing(clicked);
+   form.b7.value = xo;
+   t = turnchange(t);
+   form.whoseturn.value = whogoesnow
+   win();
+   return;
+}
+
+function change_b8(form) {
+   clicked = 8;
+   changing(clicked);
+   form.b8.value = xo;
+   t = turnchange(t);
+   form.whoseturn.value = whogoesnow
+   win();
+   return;
+}
+
+function change_b9(form) {
+   clicked = 9;
+   changing(clicked);
+   form.b9.value = xo;
+   t = turnchange(t);
+   form.whoseturn.value = whogoesnow
+   win();
+   return;
+}
+variables();
+
+
+
