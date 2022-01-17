@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 16 jan 2022 om 00:24
+-- Gegenereerd op: 17 jan 2022 om 01:34
 -- Serverversie: 10.4.22-MariaDB
 -- PHP-versie: 8.1.1
 
@@ -38,11 +38,11 @@ CREATE TABLE `contactgegevens` (
 --
 
 INSERT INTO `contactgegevens` (`id`, `account`, `volgers`) VALUES
-(3, '<p class=\"fab fa-instagram\"></p> khalid_alouat', '335 volgers'),
-(5, '<p class=\"fab fa-snapchat\"></p> alouat_719', ''),
-(7, '<p class=\"fab fa-spotify\"></p> khalid_alouat', '8 volgers'),
-(11, '<p class=\"fab fa-github\"></p> https://github.com/KhalidAlouat1', ''),
-(12, '<p class=\"fa fa-envelope\"></p> khalidalouat@hotmail.com', '');
+(3, '<p class=\"fab fa-instagram\"></p> <b>khalid_alouat</b>', '<b>335 volgers</b>'),
+(5, '<p class=\"fab fa-snapchat\"></p> <b>alouat_719</b>', '<b>-</b>'),
+(7, '<p class=\"fab fa-spotify\"></p> <b>khalid_alouat</b>', '<b>9 volgers</b>'),
+(11, '<p class=\"fab fa-github\"></p> <b>https://github.com/KhalidAlouat1</b>', '<b>-</b>'),
+(12, '<p class=\"fa fa-envelope\"></p> <b>khalidalouat@hotmail.com</b>', '<b>-</b>');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -62,7 +62,7 @@ ALTER TABLE `contactgegevens`
 -- AUTO_INCREMENT voor een tabel `contactgegevens`
 --
 ALTER TABLE `contactgegevens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
