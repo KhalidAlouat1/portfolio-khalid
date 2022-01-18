@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 17 jan 2022 om 01:34
+-- Gegenereerd op: 18 jan 2022 om 01:59
 -- Serverversie: 10.4.22-MariaDB
 -- PHP-versie: 8.1.1
 
@@ -41,9 +41,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `fname`, `lname`, `address`, `city`, `zipcode`) VALUES
-(77, '756756', '7657567', '57567', '5675675', '75675'),
-(78, '1', '1', '1', '1', '1'),
-(79, '1', '1', '1', '1', '1');
+(87, 'werwrwe', 'rwerew', 'weqweq', 'ewqeqw', 'weqweq'),
+(88, 'werwrwe', 'rwerew', 'weqweq', 'ewqeqw', 'weqweq');
 
 -- --------------------------------------------------------
 
@@ -63,10 +62,9 @@ CREATE TABLE `sushi` (
 --
 
 INSERT INTO `sushi` (`id`, `name`, `price`, `amount`) VALUES
-(1, 'Katsuo', 18, 200),
-(2, 'Escolar', 15, 200),
-(3, 'Hokigai', 25, 200),
-(4, 'Sake Toro', 30, 200);
+(1, 'Nigiri', 10, 200),
+(2, 'Sashimi', 3, 200),
+(3, 'Uramaki', 4, 200);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -92,7 +90,7 @@ ALTER TABLE `sushi`
 -- AUTO_INCREMENT voor een tabel `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT voor een tabel `sushi`

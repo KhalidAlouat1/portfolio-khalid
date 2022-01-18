@@ -12,13 +12,10 @@
 <h1 class="Titel">Sushi Restaurant Sushi</a></h1>
 
 <?php
-// require "index.php";
 error_reporting(1);
 
-// (A) PROCESS RESULT
 $result = "";
 
-// (B) CONNECT TO DATABASE - CHANGE SETTINGS TO YOUR OWN!
 $dbhost = "localhost";
 $dbname = "zuzu";
 $dbchar = "utf8";
@@ -34,9 +31,6 @@ try {
 } catch (Exception $ex) {
     $result = $ex->getMessage();
 }
-// (D) SEND ORDER VIA EMAIL (OPTIONAL)
-
-
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_CLASS,
@@ -50,7 +44,6 @@ if (isset($_POST["name"])) {
         : "<div class='notify'>$result</div>";
 }
 ?>
-
 <form id="orderform" method="post" target="_self">
     <label for="name">Naam:</label>
     <input type="text" name="name" required value="" />
@@ -65,9 +58,7 @@ if (isset($_POST["name"])) {
     <label for="city">Stad:</label>
     <input type="text" name="city" required value="" />
     
-
     <br>
-
 
     <form method="post">
         <select name="sushi_id">
@@ -157,11 +148,7 @@ if (isset($_POST["name"])) {
     }
     $pdo = null;
     ?>
-
-
-
 </body>
-
 </html>
 
 
