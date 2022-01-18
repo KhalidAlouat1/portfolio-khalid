@@ -1,12 +1,16 @@
 body {
     background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     background-image:url(/Public/Images/sushi8.jpg) ;
     background-size: cover;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Arial, Helvetica, sans-serif;
     
 }
+.Titel {
+margin-left: 600px;
 
+
+}
 h1 {
     margin: 0;
     margin-top: 50px;
@@ -16,4 +20,65 @@ th, td {
     outline: solid 1px black;
 }
 
+/* (A) ORDER FORM */
+#orderform {
+    width: 300px;
+    height: 410px;
+    margin: auto;
+    border-radius: 10px;
+    background: var(--time-line);
+    box-shadow: 1px 1px 5px rgb(0, 0, 0), -1px -1px 5px rgb(0, 0, 0);
+    height: 10%;
+    padding: 1%;
+  }
+  #orderform h1 { margin: 0; }
+  #orderform label, #orderform input, #orderform textarea {
+    width: 210px;
+    margin: 1% 5% 1% 12%;
+   height: 5%;
+   top: 5%;
+  }
+  #orderform input[type=submit] {
+    margin: 1% 13% auto;
+    height: 20px;
+    background: #ffbb0067;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5%;
+    position: static;
+  }
+  
+  input{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    top: 5%;
+  }
+  
+  select {
+    margin: 1% 30%;
+    background-color: rgb(185, 166, 166);
+  }
+  /* (B) NOTIFICATION BAR */
+  .notify {
+    background: #d7ffe9;
+    margin:  auto ;
+    width: 15%;
+    font-weight: bold;
+  }
+  
+  
+  .hoeveelheid {
+  margin: 0% 40% auto;
+  }
+  
+  table{
+    border: 1px solid #000000;
+      background: rgb(0, 0, 0);
+      margin: auto;
+      text-align: center;
+  }
+  
+  .notify{
+    background-color: transparent;
+  }
 
